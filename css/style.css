@@ -54,7 +54,7 @@ header.hero {
   box-shadow: var(--card-shadow); color: #fff; font-weight: 700;
 }
 .title { font-weight: 800; font-size: clamp(18px, 2.5vw, 22px); }
-.subtitle { color: var(--muted); font-size: 14px; }
+.subtitle { color: var(--bg); font-size: 14px; }
 
 /* --------- Навигация --------- */
 nav ul.nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
