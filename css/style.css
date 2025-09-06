@@ -71,8 +71,13 @@ nav ul.nav a {
 nav ul.nav a:hover { border-color: var(--brand); color: var(--brand); }
 
 /* --------- FAQ --------- */
-.faq-grid { display:grid; gap: 16px; grid-template-columns: 1fr; }
-@media (min-width: 760px) { .faq-grid { grid-template-columns: 1fr 1fr; } }
+.faq-grid {  
+  display: grid;
+  grid-template-columns: 1fr; /* всегда одна колонка */
+  gap: 16px;                  /* расстояние между блоками */
+  margin-top: 24px;           /* пространство между навигацией и FAQ */
+}
+/*@media (min-width: 760px) { .faq-grid { grid-template-columns: 1fr 1fr; } }*/
 
 details.faq {
   border-radius: var(--radius);
