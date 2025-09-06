@@ -122,3 +122,40 @@ footer { margin: 40px auto 20px; text-align:center; color: var(--muted); font-si
   z-index: 999;
 }
 .to-top.show { display: inline-flex; align-items:center; gap:6px; }
+
+
+/* --------- Контент инструкций --------- */
+.install-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* расстояние между разделами */
+  margin-top: 24px;
+}
+
+.install-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--brand);
+}
+
+.install-section ol,
+.install-section ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.install-section li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.install-section a {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+.install-section a:hover {
+  color: var(--brand-2);
+}
+
