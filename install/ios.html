@@ -7,40 +7,20 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- Шапка -->
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="logo" aria-hidden="true">VPN</div>
-      <div>
-        <div class="title">Инструкция по настройке VPN на iOS</div>
-        <div class="subtitle">Пошаговое руководство для установки</div>
-      </div>
-    </div>
-  </header>
 
-  <!-- Основной контент -->
+  <!-- Вставка header, nav через JS -->
+  <div id="header-placeholder"></div>
+  <div id="nav-placeholder"></div>
+
   <main class="wrap">
-    <!-- Навигация -->
-    <nav>
-      <ul class="nav">
-          <li><a href="../index.html">Главная (FAQ)</a></li>
-          <li><a href="../bot.html">Как пользоваться ботом</a></li>
-          <li><a href="../support.html">Поддержка</a></li>
-        </ul>
-    </nav>
-
-    <!-- Контент страницы -->
+    <!-- Уникальный контент страницы -->
     <section class="install-content">
-
-      <!-- Раздел 1 -->
       <div class="install-section">
         <h2>1. Установка приложения</h2>
         <ol>
-          <li>Скачайте приложение из стора по <a href="#">ссылке</a>.</li>
+          <li>Скачайте приложение из App Store по <a href="#">ссылке</a>.</li>
         </ol>
       </div>
-
-      <!-- Раздел 2 -->
       <div class="install-section">
         <h2>2. Настройка приложения</h2>
         <ol>
@@ -48,8 +28,6 @@
           <li>Запустите приложение и вставьте ключ.</li>
         </ol>
       </div>
-
-      <!-- Раздел 3 -->
       <div class="install-section">
         <h2>3. Возможные ошибки</h2>
         <ul>
@@ -57,15 +35,29 @@
           <li>Проблема с подпиской — проверьте срок действия.</li>
         </ul>
       </div>
-
     </section>
-
-    <!-- Подвал -->
-    <footer>
-      <p>© <span id="year"></span> Liberty Guard VPN — Центр помощи</p>
-    </footer>
   </main>
+  
+  <!-- Вставка footer через JS -->
+  <div id="footer-placeholder"></div>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    const includeHTML = async (id, url) => {
+      const res = await fetch(url);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    includeHTML('header-placeholder', '../includes/header.html');
+    includeHTML('nav-placeholder', '../includes/nav.html');
+    includeHTML('footer-placeholder', '../includes/footer.html');
+
+    // Подставляем текущий год
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
