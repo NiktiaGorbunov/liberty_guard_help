@@ -3,17 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Инструкция по наст VPN на iOS</title>
+  <title>Инструкция по установке VPN на iOS</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <!-- Include header и nav -->
-  <div id="header-placeholder"></div>
-  <div id="nav-placeholder"></div>
-
   <main class="wrap">
-    <!-- Уникальный контент страницы -->
+    <!-- Include header -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="logo" aria-hidden="true">VPN</div>
+        <div>
+          <div class="title" id="page-title">Установка VPN на iOS</div>
+          <div class="subtitle">Простая инструкция для вашего устройства</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Навигация -->
+    <section class="intro">
+      <nav>
+        <ul class="nav">
+          <li><a href="../index.html">Главная (FAQ)</a></li>
+          <li><a href="install.html">Инструкция iOS</a></li>
+          <li><a href="support.html">Поддержка</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Контент страницы -->
     <section class="install-content">
       <div class="install-section">
         <h2>1. Установка приложения</h2>
@@ -36,16 +54,17 @@
         </ul>
       </div>
     </section>
+
+    <!-- Футер -->
+    <footer>
+      <p>© <span id="year"></span> Liberty Guard VPN — Центр помощи</p>
+    </footer>
   </main>
-  
-  <!-- Include footer -->
-  <div id="footer-placeholder"></div>
 
   <!-- Кнопка Наверх -->
-  <button id="toTop" class="to-top">Наверх ↑</button>
+  <button class="to-top" id="toTop" aria-label="Наверх" title="Наверх">▲ Наверх</button>
 
-  <!-- Объединённый JS -->
+  <!-- JS -->
   <script src="../js/main.js"></script>
-   
 </body>
 </html>
