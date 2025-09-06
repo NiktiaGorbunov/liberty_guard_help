@@ -25,6 +25,14 @@
   }
 }
 
+/* --------------------------------------------------- */
+/* Include-блоки header, nav, footer — не ломают верстку */
+#header-placeholder,
+#nav-placeholder,
+#footer-placeholder {
+  display: contents;
+}
+
 /* --------- Общие стили --------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
