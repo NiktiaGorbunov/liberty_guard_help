@@ -3,130 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQ — VPN</title>
-  <meta name="description" content="Ответы на частые вопросы и инструкции по установке и использованию VPN." />
-  <meta property="og:title" content="FAQ — VPN" />
-  <meta property="og:description" content="Ответы на частые вопросы и инструкции по установке и использованию VPN." />
+  <title>FAQ — Liberty Guard VPN</title>
+  <meta name="description" content="Ответы на частые вопросы и инструкции по установке и использованию Liberty Guard VPN." />
+  <meta property="og:title" content="FAQ — Liberty Guard VPN" />
+  <meta property="og:description" content="Ответы на частые вопросы и инструкции по установке и использованию Liberty Guard VPN." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#111827" />
-  <style>
-    /* --------- Базовые переменные --------- */
-    :root {
-      --bg: #0b1020;          /* фон */
-      --bg-elev: #11162a;     /* приподнятые блоки */
-      --text: #e7ecff;        /* основной текст */
-      --muted: #a6b0d6;       /* вторичный текст */
-      --brand: #6ca2ff;       /* акцент */
-      --brand-2: #8b5cf6;     /* второй акцент */
-      --ok: #22c55e;
-      --warn: #f59e0b;
-      --radius: 16px;
-      --shadow: 0 8px 30px rgba(0,0,0,.25);
-      --card-shadow: 0 10px 20px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.05);
-      --maxw: 940px;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8fc;
-        --bg-elev: #ffffff;
-        --text: #111827;
-        --muted: #4b5563;
-        --brand: #2563eb;
-        --brand-2: #7c3aed;
-        --shadow: 0 8px 30px rgba(17,24,39,.08);
-        --card-shadow: 0 4px 14px rgba(17,24,39,.12), inset 0 1px 0 rgba(255,255,255,.6);
-      }
-    }
-
-    /* --------- Базовые стили --------- */
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(108,162,255,.15), transparent 60%),
-                  radial-gradient(1000px 600px at 90% 0%, rgba(139,92,246,.16), transparent 50%),
-                  var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
-
-    header.hero {
-      position: sticky; top: 0; z-index: 10;
-      backdrop-filter: saturate(1.2) blur(8px);
-      background: linear-gradient(180deg, rgba(17,22,42,.85) 0%, rgba(17,22,42,.55) 70%, transparent 100%);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    @media (prefers-color-scheme: light) {
-      header.hero { background: rgba(255,255,255,.8); }
-    }
-
-    .hero-inner { display:flex; align-items:center; gap:16px; padding:16px 24px; max-width: var(--maxw); margin: 0 auto; }
-    .logo {
-      width: 40px; height: 40px; border-radius: 12px; display:grid; place-items:center;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      box-shadow: var(--card-shadow);
-      color: #fff; font-weight: 700;
-    }
-    .title { font-weight: 800; letter-spacing: .2px; font-size: clamp(18px, 2.5vw, 22px); }
-    .subtitle { color: var(--muted); font-size: 14px; }
-
-    .intro {
-      margin: 32px auto 8px; padding: 18px 20px; border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
-    }
-
-    /* --------- Карточки FAQ --------- */
-    .faq-grid { display:grid; gap: 16px; grid-template-columns: 1fr; }
-    @media (min-width: 760px) { .faq-grid { grid-template-columns: 1fr 1fr; } }
-
-    details.faq {
-      border-radius: var(--radius);
-      background: var(--bg-elev);
-      box-shadow: var(--card-shadow);
-      border: 1px solid rgba(255,255,255,.06);
-      overflow: hidden;
-    }
-    details.faq[open] { outline: 2px solid rgba(108,162,255,.25); }
-
-    summary {
-      list-style: none; cursor: pointer; display:flex; gap:12px; align-items:flex-start;
-      padding: 16px 18px; user-select: none; position: relative; font-weight: 700;
-    }
-    summary::-webkit-details-marker { display:none; }
-
-    .q-icon { flex: 0 0 28px; height: 28px; border-radius: 8px; display:grid; place-items:center; color:#fff; font-size:14px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2)); }
-
-    .q-title { font-size: 16px; line-height: 1.4; }
-
-    .answer { padding: 0 18px 18px 18px; color: var(--text); }
-    .answer p { margin: 0 0 10px; }
-
-    /* --------- Hint-блоки --------- */
-    .hint { border-radius: 14px; padding: 14px 16px; border: 1px dashed rgba(255,255,255,.18); background: rgba(108,162,255,.08); }
-    .hint h4 { margin: 0 0 6px; font-size: 13px; font-weight: 800; letter-spacing: .2px; text-transform: uppercase; color: var(--brand); }
-    .hint p, .hint li { color: var(--text); }
-
-    .links { display: grid; gap:10px; }
-    .links a { text-decoration: none; border: 1px solid rgba(255,255,255,.14); padding: 10px 12px; border-radius: 12px; display:flex; justify-content:space-between; align-items:center; background: rgba(255,255,255,.02); }
-    .links a:hover { border-color: rgba(108,162,255,.5); }
-    .links small { color: var(--muted); }
-
-    a { color: var(--brand); }
-
-    footer { margin: 28px auto 60px; text-align:center; color: var(--muted); font-size: 14px; }
-
-    /* Кнопка «вверх» */
-    .to-top { position: fixed; right: 16px; bottom: 16px; border: none; padding: 10px 12px; border-radius: 12px; cursor: pointer;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #fff; box-shadow: var(--shadow); display:none; }
-    .to-top.show { display: inline-flex; align-items:center; gap:6px; }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="hero">
@@ -142,172 +25,28 @@
   <main class="wrap">
     <section class="intro">
       <p><strong>Назначение страницы:</strong> простые инструкции и ответы на частые вопросы. Подходит для открытия внутри Telegram WebApp и GitHub Pages.</p>
+      <nav>
+        <ul class="nav">
+          <li><a href="index.html">Главная (FAQ)</a></li>
+          <li><a href="install.html">Инструкция по установке</a></li>
+          <li><a href="bot.html">Как пользоваться ботом</a></li>
+          <li><a href="support.html">Поддержка</a></li>
+        </ul>
+      </nav>
     </section>
 
     <section class="faq-grid" aria-label="Частые вопросы">
-
-      <!-- 1. Как установить ваш VPN? -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">Как установить ваш VPN?</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Инструкция по установке</h4>
-            <div class="links">
-              <a href="https://gruvpn-1.gitbook.io/gruvpn/v/ios-gruvpn" target="_blank" rel="noopener">
-                <span>iOS (iPhone)</span><small>gitbook.io</small>
-              </a>
-              <a href="https://gruvpn-1.gitbook.io/gruvpn/v/android-gruvpn-1" target="_blank" rel="noopener">
-                <span>Android (HarmonyOS)</span><small>gitbook.io</small>
-              </a>
-              <a href="https://telegra.ph/Instrukciya-po-ustanovke-VPN-na-Android-TV-08-25" target="_blank" rel="noopener">
-                <span>Android TV</span><small>telegra.ph</small>
-              </a>
-              <a href="https://gruvpn-1.gitbook.io/gruvpn/v/macos-gruvpn" target="_blank" rel="noopener">
-                <span>macOS</span><small>gitbook.io</small>
-              </a>
-              <a href="https://gruvpn-1.gitbook.io/gruvpn/v/windows-gruvpn" target="_blank" rel="noopener">
-                <span>Windows</span><small>gitbook.io</small>
-              </a>
-              <a href="https://gruvpn-1.gitbook.io/gruvpn/v/linux-gruvpn" target="_blank" rel="noopener">
-                <span>Linux</span><small>gitbook.io</small>
-              </a>
-              <a href="https://gruvpn-1.gitbook.io/gruvpn/v/router-gruvpn" target="_blank" rel="noopener">
-                <span>Router</span><small>gitbook.io</small>
-              </a>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <!-- 2. Не подключается к VPN -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">Не подключается к VPN</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Проверьте и переустановите</h4>
-            <p>Проверьте срок своей подписки. Если он действителен, попробуйте удалить приложение VPN и установить заново по инструкции.</p>
-            <p>Если проблема сохранилась, обратитесь в поддержку.</p>
-          </div>
-        </div>
-      </details>
-
-      <!-- 3. Как пользоваться ботом? -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">Как пользоваться ботом?</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Руководство</h4>
-            <p>Инструкцию по использованию бота вы можете найти по ссылке:</p>
-            <p><a href="https://gruvpn-1.gitbook.io/gruvpn/v/docs-gruvpn" target="_blank" rel="noopener">https://gruvpn-1.gitbook.io/gruvpn/v/docs-gruvpn</a></p>
-          </div>
-        </div>
-      </details>
-
-      <!-- 4. Как отменить подписку -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">Как отменить подписку</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Оплата и продление</h4>
-            <p>У нас нет никаких скрытых платежей. После окончания срока подписки она автоматически отменится.</p>
-          </div>
-        </div>
-      </details>
-
-      <!-- 5. Можно ли использовать один ключ на нескольких устройствах -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">Можно ли использовать один ключ на нескольких устройствах?</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Лимиты устройств</h4>
-            <p>Вы можете использовать один ключ на <strong>10 устройствах</strong> одновременно.</p>
-          </div>
-        </div>
-      </details>
-
-      <!-- 6. На каком протоколе работает VPN -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">На каком протоколе работает VPN?</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Технология</h4>
-            <p>Наш VPN работает на основе <strong>VLESS with Reality</strong>, маскируясь под обычный сёрфинг в интернете (работает даже в Китае и Иране).</p>
-            <p>Данную систему невозможно обнаружить и заблокировать нынешними средствами.</p>
-          </div>
-        </div>
-      </details>
-
-      <!-- 7. Могу ли я купить ключ сейчас, а активировать позже -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">Могу ли я купить ключ сейчас, а активировать позже?</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Активация</h4>
-            <p>Да, но срок ключа не изменится. Лучше активировать его сейчас.</p>
-          </div>
-        </div>
-      </details>
-
-      <!-- 8. У меня есть вопрос/сотрудничество -->
-      <details class="faq">
-        <summary>
-          <span class="q-icon">?</span>
-          <span class="q-title">У меня есть вопрос / сотрудничество</span>
-        </summary>
-        <div class="answer">
-          <div class="hint">
-            <h4>Связь с поддержкой</h4>
-            <p>По всем вопросам вы можете обратиться в нашу поддержку:</p>
-            <p><a href="https://t.me/gVPNsupport" target="_blank" rel="noopener">https://t.me/gVPNsupport</a></p>
-          </div>
-        </div>
-      </details>
-
+      <!-- FAQ-вопросы и ответы -->
+      <!-- ... -->
     </section>
 
     <footer>
-      <p>© <span id="year"></span> VPN — Центр помощи</p>
+      <p>© <span id="year"></span> Liberty Guard VPN — Центр помощи</p>
     </footer>
   </main>
 
   <button class="to-top" id="toTop" aria-label="Наверх" title="Наверх">▲ Наверх</button>
 
-  <script>
-    // Год в футере
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Кнопка «наверх»
-    const toTop = document.getElementById('toTop');
-    const toggleTop = () => {
-      if (window.scrollY > 300) toTop.classList.add('show'); else toTop.classList.remove('show');
-    };
-    window.addEventListener('scroll', toggleTop);
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Авто-открытие первого вопроса (опционально)
-    const first = document.querySelector('details.faq');
-    if (first) first.setAttribute('open', 'open');
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
