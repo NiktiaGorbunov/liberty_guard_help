@@ -154,7 +154,7 @@ footer { margin: 40px auto 20px; text-align:center; color: var(--muted); font-si
 }
 
 /* --------- Абзацы --------- */
-.content p {
+p {
   margin-bottom: 16px; /* отступ после абзаца */
   line-height: 1.6;    /* высота строки для удобочитаемости */
 }
