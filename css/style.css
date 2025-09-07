@@ -66,7 +66,15 @@ header.hero {
 .subtitle { color: var(--muted); font-size: 14px; }
 
 /* --------- Навигация --------- */
-nav ul.nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+nav ul.nav { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 12px; 
+  margin-top: 12px; 
+  justify-content: flex-start; /* по левому краю по умолчанию */
+}
+
+/* Стили для ссылок навигации */
 nav ul.nav li { list-style: none; }
 nav ul.nav a {
   text-decoration: none;
@@ -76,8 +84,17 @@ nav ul.nav a {
   background: rgba(255,255,255,.02);
   color: var(--text);
   transition: 0.2s;
+  white-space: nowrap; /* предотвращает перенос текста */
 }
 nav ul.nav a:hover { border-color: var(--brand); color: var(--brand); }
+
+/* --------- Вертикальная навигация для узких экранов --------- */
+@media (max-width: 480px) {
+  nav ul.nav {
+    flex-direction: column; /* колонки вместо строк */
+    gap: 8px; /* расстояние между кнопками вертикально */
+  }
+}
 
 /* --------- FAQ --------- */
 .faq-grid {  
