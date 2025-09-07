@@ -27,9 +27,9 @@
       <p>Список вопросов и ответов собран на основные популярных ситуаций и проблем. Если же вы не нашли нужного ответа, не переживайте — вы всегда можете обратиться в нашу службу поддержкирос. Мы стремимся, чтобы использование нашего сервиса было максимально простым и безопасным.</p>
       <nav>
         <ul class="nav">
-          <li><a href="#" onclick="openTgLink('index.html')">Главная (FAQ)</a></li>
-          <li><a href="#" onclick="openTgLink('bot.html')">Как пользоваться ботом</a></li>
-          <li><a href="#" onclick="openTgLink('support.html')">Поддержка</a></li>
+          <li><a href="index.html" onclick="event.preventDefault(); openTgLink('index.html')">Главная (FAQ)</a></li>
+          <li><a href="bot.html"   onclick="event.preventDefault(); openTgLink('bot.html')">Как пользоваться ботом</a></li>
+          <li><a href="support.html" onclick="event.preventDefault(); openTgLink('support.html')">Поддержка</a></li>
         </ul>
       </nav>
     </section>
@@ -41,7 +41,7 @@
         <div class="answer">
           <div class="hint">
             Инструкция по установке:<br><br>
-            • IOS (iPhone): <a href="#" onclick="openTgLink('https://niktiagorbunov.github.io/liberty_guard_help/install/ios.html')">ссылка</a><br>
+            • IOS (iPhone): <a href="install/ios.html" onclick="event.preventDefault(); openTgLink('install/ios.html')">инструкция iOS</a><br>
             • Android: <a href="https://niktiagorbunov.github.io/liberty_guard_help/install/android.html" target="_blank">ссылка</a><br>
             • AndroidTV: <a href="https://niktiagorbunov.github.io/liberty_guard_help/install/android_tv.html" target="_blank">ссылка</a><br>
             • MacOS: <a href="https://niktiagorbunov.github.io/liberty_guard_help/install/macos.html" target="_blank">ссылка</a><br>
