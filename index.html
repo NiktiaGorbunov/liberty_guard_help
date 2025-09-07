@@ -25,19 +25,12 @@
   <main class="wrap">
     <section class="intro">
       <p>Список вопросов и ответов собран на основные популярных ситуаций и проблем. Если же вы не нашли нужного ответа, не переживайте — вы всегда можете обратиться в нашу службу поддержкирос. Мы стремимся, чтобы использование нашего сервиса было максимально простым и безопасным.</p>
-      <nav>
-        <ul class="nav">
-          <li><a href="index.html" onclick="event.preventDefault(); openTgLink('index.html')">Главная (FAQ)</a></li>
-          <li><a href="bot.html" onclick="event.preventDefault(); openTgLink('bot.html')">Как пользоваться ботом</a></li>
-          <li><a href="support.html" onclick="event.preventDefault(); openTgLink('support.html')">Поддержка</a></li>
-        </ul>
-      </nav>
     </section>
 
     <section class="faq-grid" aria-label="Частые вопросы">
       <!-- FAQ-вопросы и ответы -->
       <details class="faq">
-        <summary><span class="q-icon">?</span> Как установить ваш VPN?</summary>
+        <summary><span class="q-icon">?</span> Какое приложение установить</summary>
         <div class="answer">
           <div class="hint">
             Инструкция по установке:<br><br>
@@ -48,6 +41,25 @@
             • Windows: <a href="install/windows.html" onclick="event.preventDefault(); openTgLink('install/windows.html')">ссылка</a><br>
             • Linux: <a href="install/linux.html" onclick="event.preventDefault(); openTgLink('install/linux.html')">ссылка</a><br>
             • Router: <a href="install/router.html" onclick="event.preventDefault(); openTgLink('install/router.html')">ссылка</a>
+          </div>
+        </div>
+      </details>
+      <details class="faq">
+        <summary><span class="q-icon">?</span> Как пополнить баланс</summary>
+        <div class="answer">
+          <div class="hint">
+            Пополнить баланс можно разными способами:
+            <ul>
+              <li>"Звезды" Telegram: <a href="#" onclick="event.preventDefault(); openTgLink('#')">инструкция к оплате</a></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+      <details class="faq">
+        <summary><span class="q-icon">?</span> Как пользоваться ботом</summary>
+        <div class="answer">
+          <div class="hint">
+            Подробная иснтрукия по использованию бота описна на отдельной <a href="bot.html" onclick="event.preventDefault(); openTgLink('bot.html')">странице</a>
           </div>
         </div>
       </details>
