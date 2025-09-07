@@ -146,12 +146,11 @@ footer { margin: 40px auto 20px; text-align:center; color: var(--muted); font-si
 
 /* --------- Изображение --------- */
 .bot-img {
-  max-width: 300px;   /* максимальная ширина */
-  max-height: 300px;  /* максимальная высота */
-  width: 100%;        /* адаптивная ширина внутри контейнера */
-  height: auto;       /* пропорциональная высота */
+  width: 400px;       /* фиксированная ширина для десктопного WebApp */
+  max-width: 90%;     /* ограничение для маленьких экранов */
+  height: auto;
   display: block;
-  margin: 0 auto;     /* центрирование */
+  margin: 0 auto;
 }
 
 /* --------- Абзацы --------- */
