@@ -144,6 +144,14 @@ summary::-webkit-details-marker { display:none; }
 /* --------- Подвал --------- */
 footer { margin: 40px auto 20px; text-align:center; color: var(--muted); font-size: 14px; }
 
+/* --------- Изображение --------- */
+.bot-img {
+  max-width: 100%;   /* адаптивная ширина */
+  height: auto;      /* пропорциональная высота */
+  display: block;
+  margin: 0 auto;    /* центрирование */
+}
+
 /* --------- Кнопка «Наверх» --------- */
 .to-top {
   position: fixed;
