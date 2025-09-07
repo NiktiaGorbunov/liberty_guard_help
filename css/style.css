@@ -65,36 +65,48 @@ header.hero {
 .title { font-weight: 800; font-size: clamp(18px, 2.5vw, 22px); }
 .subtitle { color: var(--muted); font-size: 14px; }
 
-/* --------- Навигация --------- */
-nav ul.nav { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 12px; 
-  margin-top: 12px; 
-  justify-content: flex-start; /* по левому краю по умолчанию */
+
+/* Горизонтальное расположение (по умолчанию) */
+nav ul.nav {
+  display: flex;
+  justify-content: center; /* центрируем горизонтально */
+  gap: 12px;
+  margin-top: 12px;
 }
 
-/* Стили для ссылок навигации */
 nav ul.nav li { list-style: none; }
+
 nav ul.nav a {
-  text-decoration: none;
+  display: block;
+  text-align: center;
   padding: 8px 14px;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.02);
   color: var(--text);
+  text-decoration: none;
   transition: 0.2s;
-  white-space: nowrap; /* предотвращает перенос текста */
+  white-space: nowrap;
 }
-nav ul.nav a:hover { border-color: var(--brand); color: var(--brand); }
 
-/* --------- Вертикальная навигация для узких экранов --------- */
+nav ul.nav a:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* Вертикальное расположение на узких экранах */
 @media (max-width: 480px) {
   nav ul.nav {
-    flex-direction: column; /* колонки вместо строк */
-    gap: 8px; /* расстояние между кнопками вертикально */
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch; /* растягиваем кнопки на всю ширину */
+  }
+
+  nav ul.nav a {
+    width: 100%;
   }
 }
+
 
 /* --------- FAQ --------- */
 .faq-grid {  
