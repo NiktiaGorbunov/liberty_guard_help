@@ -154,6 +154,20 @@ footer { margin: 40px auto 20px; text-align:center; color: var(--muted); font-si
   margin: 0 auto;     /* центрирование */
 }
 
+/* --------- Абзацы --------- */
+.content p {
+  margin-bottom: 16px; /* отступ после абзаца */
+  line-height: 1.6;    /* высота строки для удобочитаемости */
+}
+
+/* Мобильные устройства — уменьшаем отступ */
+@media (max-width: 480px) {
+  .content p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+}
+
 /* --------- Кнопка «Наверх» --------- */
 .to-top {
   position: fixed;
